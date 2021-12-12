@@ -1,5 +1,3 @@
 baseURL = 'https://ktaroabobon.github.io/'
 languageCode = 'ja'
 title = 'My New Hugo Site'
-
-theme = ""
