@@ -1,5 +1,5 @@
 baseURL = 'https://ktaroabobon.github.io/'
-# languageCode = 'ja'
+languageCode = 'ja'
 title = 'My New Hugo Site'
 
 # Global Params
