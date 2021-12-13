@@ -1,3 +1,13 @@
 baseURL = 'https://ktaroabobon.github.io/'
-languageCode = 'ja'
+# languageCode = 'ja'
 title = 'My New Hugo Site'
+
+# Global Params
+auther = "ktaroabobon"
+twitter = "abobon_blog"
+largeTwitterCard = true
+description = "abobonのブログ"
+
+
+
+# Page Params
