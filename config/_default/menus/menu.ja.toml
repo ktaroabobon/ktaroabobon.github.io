@@ -1,4 +1,5 @@
-menu.ja.toml[[main]]
+# menu.ja.toml
+[[main]]
   name = "Home"
   url = ""
   weight = -110
