@@ -1,6 +1,6 @@
 baseURL = 'https://ktaroabobon.github.io/'
 languageCode = 'ja'
-title = 'My New Hugo Site'
+title = 'abobonのブログ'
 
 # Global Params
 auther = "ktaroabobon"

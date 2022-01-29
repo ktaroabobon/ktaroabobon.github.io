@@ -29,22 +29,22 @@ other = "戻る"
 other = "翻訳"
 
 [categories]
-other = "Categories"
+other = "カテゴリー"
 
 [tags]
-other = "Tags"
+other = "タグ"
 
 [series]
-other = "Series"
+other = "シリーズ"
 
 [all_categories]
-other = "All Categories"
+other = "全てのカテゴリー"
 
 [all_tags]
-other = "All Tags"
+other = "全てのタグ"
 
 [all_series]
-other = "All Series"
+other = "全てのシリーズ"
 
 [overview]
 other = "概要"
