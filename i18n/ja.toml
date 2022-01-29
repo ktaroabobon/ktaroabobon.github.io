@@ -1,0 +1,74 @@
+[read_more]
+other = "続きを読む"
+
+[copyright]
+other = "Copyright"
+
+[all_rights]
+other = "All Rights Reserved"
+
+[share_on]
+other = "共有する"
+
+[featured_posts]
+other = "特集記事"
+
+[recent_posts]
+other = "最近の記事"
+
+[404_title]
+other = "ページがありません"
+
+[could_not_find]
+other = "お探しのページが見つかりませんでした"
+
+[go_back]
+other = "戻る"
+
+[translations]
+other = "翻訳"
+
+[categories]
+other = "Categories"
+
+[tags]
+other = "Tags"
+
+[series]
+other = "Series"
+
+[all_categories]
+other = "All Categories"
+
+[all_tags]
+other = "All Tags"
+
+[all_series]
+other = "All Series"
+
+[overview]
+other = "概要"
+
+[reading_time]
+other = "読み終えるまでの時間：{{ .ReadingTime }}分"
+
+[img_web_path]
+other = "Web path"
+
+[img_web_path_desc]
+other = "新規タブで開く"
+
+[img_disk_path]
+other = "Disk path"
+
+[img_pb]
+other = "Page Bundles"
+
+[img_pb_using]
+other = "Using"
+
+[img_pb_desc]
+other = "Information about Hugo Page Bundles"
+
+[series_posts]
+other = "本シリーズの記事"

@@ -34,15 +34,15 @@
   name = "github"
   type = "social"
   weight = 1
-  url = "https://github.com/ktaroabobon"
+  url = "https://github.com/ktaroabobon/"
 [[social]]
   name = "twitter"
   weight = 2
-  url = "https://twitter.com/abobon_blog"
+  url = "https://twitter.com/abobon_blog/"
 [[social]]
   name = "linkedin"
   weight = 3
-  url = "https://www.linkedin.com/in/ktaroabobon"
+  url = "https://www.linkedin.com/in/ktaroabobon/"
 [[social]]
   name = "rss"
   weight = 4
