@@ -3,7 +3,7 @@ author: Hugo Authors
 title: Using Notices
 date: 2021-08-20
 description: Using Notices functionality withhin this theme
-draft = true
+draft : true
 
 ---
 
