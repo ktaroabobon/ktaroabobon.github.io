@@ -93,7 +93,7 @@ iconsDir = "icons/" # without a leading forward slash
 
 # website author
 [author]
-name = "Keitaro Watanabe"
+name = "abobon(Keitaro Watanabe)"
 # photo = "images/jane-doe.png" #include this if you would like to show the author photo on the sidebar
 
 [plausible_analytics]
