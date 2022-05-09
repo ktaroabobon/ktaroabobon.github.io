@@ -18,6 +18,8 @@ categories = [
 series = ["Guia de Temas"]
 aliases = ["migrar-de-jekyl"]
 thumbnail = "images/building.png"
+draft = true
+
 +++
 
 **Este artigo oferece um exemplo básico de uma tradução em Português. O restante conteúdo não foi traduzido.**

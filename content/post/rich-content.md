@@ -8,6 +8,7 @@ tags = [
     "privacy",
 ]
 thumbnail = "images/dollar.png"
+draft = true
 
 +++
 

@@ -7,8 +7,3 @@
   title = "abobonのサイト"
   LanguageName = "日本語"
   weight = 2
-
-[pt]
-  title = "Claridade" # just for the sake of showing this is possible
-  LanguageName = "Português"
-  weight = 3
