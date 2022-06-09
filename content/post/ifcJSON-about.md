@@ -5,13 +5,13 @@ date = "2022-05-08"
 description = "IFCファイルをjsonに変換するコンバータの一つであるifc2jsonの解説"
 featured = true
 tags = [
-"ifc",
-"json",
+"ifcJSON",
 ]
 categories = [
 "ifc",
+"json",
 ]
-series = ["IFC JSON"]
+series = ["ifc2json"]
 thumbnail = "images/building.png"
 draft = true
 
