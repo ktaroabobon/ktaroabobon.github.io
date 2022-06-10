@@ -13,7 +13,7 @@ categories = [
 ]
 series = ["ifc2json"]
 thumbnail = "images/building.png"
-draft = true
+draft = false
 
 +++
 
