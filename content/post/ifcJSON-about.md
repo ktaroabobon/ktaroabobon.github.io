@@ -27,7 +27,7 @@ draft = false
 - pythonで書かれている
 - ifcの対応バージョンはifc2x3, ifc4.0, ifc4.3
 
-## ifc2jsonが解決する問題
+## ifcJSONが解決する問題
 
 - 多くの開発者はEXPRESSや[STP](https://www.adobe.com/jp/creativecloud/file-types/image/vector/step-file.html)
   のインスタンスファイルを閲覧したり使用したりしたことがほとんどない。そのため、純正のIFCファイルは必要なデータを抽出するのに必要な労力が増加してしまう。
