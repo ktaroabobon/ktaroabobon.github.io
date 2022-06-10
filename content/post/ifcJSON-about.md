@@ -1,6 +1,6 @@
 +++
 author = "ktaroabobon"
-title = "ifc2jsonについて"
+title = "ifcJSONについて"
 date = "2022-05-08"
 description = "IFCファイルをjsonに変換するコンバータの一つであるifc2jsonの解説"
 featured = true
@@ -16,8 +16,6 @@ thumbnail = "images/building.png"
 draft = false
 
 +++
-
-# ifcJSON
 
 本記事ではifcJSONについての概要や開発戦略を記載しています。また、その内容については[公式ドキュメント](https://github.com/buildingSMART/ifcJSON/tree/master/Documentation)
 を和訳した内容が中心となっています。
