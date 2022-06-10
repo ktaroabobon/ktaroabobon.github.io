@@ -1,6 +1,6 @@
-<!doctype html><html lang=ja data-figures>
+<!doctype html><html lang=ja data-figures class=page>
 <head>
-<title>Posts | abobonのサイト</title>
+<title>ifc2jsonについて | abobonのサイト</title>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta http-equiv=x-ua-compatible content="IE=edge">
@@ -8,19 +8,18 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','XXXXXXXXXX')</script>
 <meta property="og:locale" content="ja">
 <meta property="og:type" content="article">
-<meta name=description content>
+<meta name=description content="IFCファイルをjsonに変換するコンバータの一つであるifc2jsonの解説">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:creator content="@abobon_blog">
-<meta name=twitter:title content="Posts">
-<meta property="og:url" content="https://ktaroabobon.github.io/post/">
-<meta property="og:title" content="Posts">
-<meta property="og:description" content>
-<meta property="og:image" content="https://ktaroabobon.github.io/images/thumbnail.png">
+<meta name=twitter:title content="ifc2jsonについて">
+<meta property="og:url" content="https://ktaroabobon.github.io/post/ifcjson-about/">
+<meta property="og:title" content="ifc2jsonについて">
+<meta property="og:description" content="IFCファイルをjsonに変換するコンバータの一つであるifc2jsonの解説">
+<meta property="og:image" content="https://ktaroabobon.github.io/post/ifcjson-about/images/building.png">
 <link rel=apple-touch-icon sizes=180x180 href=https://ktaroabobon.github.io/icons/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=https://ktaroabobon.github.io/icons/favicon-32x32.png>
 <link rel=manifest href=https://ktaroabobon.github.io/icons/site.webmanifest>
-<link rel=canonical href=https://ktaroabobon.github.io/post/>
-<link rel=alternate type=application/rss+xml href=https://ktaroabobon.github.io/post/index.xml title=abobonのサイト>
+<link rel=canonical href=https://ktaroabobon.github.io/post/ifcjson-about/>
 <link rel=preload href=https://ktaroabobon.github.io/css/styles.01869c76e4757810d94ecbdccadba853d9d01d9416dfeb113df02e1479ff8b36e284e8bfeb3e8f353f2fdcdcbbdfcf27e558dbda96eb6341bfc304d55cd9e986.css integrity="sha512-AYacduR1eBDZTsvcytuoU9nQHZQW3+sRPfAuFHn/izbihOi/6z6PNT8v3Ny7388n5Vjb2pbrY0G/wwTVXNnphg==" as=style crossorigin=anonymous>
 <link rel=preload href=https://ktaroabobon.github.io/js/bundle.min.061d04727b51b0a8fafe2f15b9370a961f33306e7af52abd00d69c906f5d825f1599306159d7756d7d2b4f359767a170625ae541d1f37d05c1daa4d5c7feec25.js as=script integrity="sha512-Bh0EcntRsKj6/i8VuTcKlh8zMG569Sq9ANackG9dgl8VmTBhWdd1bX0rTzWXZ6FwYlrlQdHzfQXB2qTVx/7sJQ==" crossorigin=anonymous>
 <link rel=stylesheet type=text/css href=https://ktaroabobon.github.io/css/styles.01869c76e4757810d94ecbdccadba853d9d01d9416dfeb113df02e1479ff8b36e284e8bfeb3e8f353f2fdcdcbbdfcf27e558dbda96eb6341bfc304d55cd9e986.css integrity="sha512-AYacduR1eBDZTsvcytuoU9nQHZQW3+sRPfAuFHn/izbihOi/6z6PNT8v3Ny7388n5Vjb2pbrY0G/wwTVXNnphg==" crossorigin=anonymous>
@@ -78,13 +77,8 @@
 </header>
 <main>
 <div class="grid-inverse wrap content">
-<ul class=posts id=posts>
-<li class=post_item>
-<div class=excerpt>
-<div class=excerpt_header>
-<h3 class=post_link>
-<a href=https://ktaroabobon.github.io/post/ifcjson-about/ title=ifc2jsonについて>ifc2jsonについて</a>
-</h3>
+<article class=post_content>
+<h1 class=post_title>ifc2jsonについて</h1>
 <div class=post_meta>
 <span><svg class="icon"><use xlink:href="#calendar"/></svg></span>
 <span class=post_date>
@@ -106,25 +100,69 @@ share:
 </div>
 </span>
 </div>
-</div>
-<div class="excerpt_footer partition">
-<div class=excerpt_thumbnail>
-<picture>
-<img class="image_thumbnail image_internal" src=https://ktaroabobon.github.io/images/building.png alt=ifc2jsonについて loading=lazy decoding=async width=200 height=200></picture>
-</div>
-<div>
-<p class=pale>
-ifcJSON 本記事ではifcJSONについての概要や開発戦略を記載しています。また、その内容については公式ドキュメント を和訳した内容が中心となっています。
-概要 github ifcを保守運用しているBuildingSMARTが作成している pythonで書かれている ifcの対応バージョンはifc2x3, ifc4.0, ifc4.3 ifc2jsonが解決する問題 多くの開発者はEXPRESSやSTP のインスタンスファイルを閲覧したり使用したりしたことがほとんどない。そのため、純正のIFCファイルは必要なデータを抽出するのに必要な労力が増加してしまう。 IFCのデータは通常IFCファイルを介して交換されるが、これは …
-</p>
-<a href=https://ktaroabobon.github.io/post/ifcjson-about/ title=続きを読む class="excerpt_more button">続きを読む</a>
-</div>
-</div>
-</div>
-</li>
-<li>
-</li>
+<div class=post_body><h1 id=ifcjson>ifcJSON</h1>
+<p>本記事ではifcJSONについての概要や開発戦略を記載しています。また、その内容については<a href=https://github.com/buildingSMART/ifcJSON/tree/master/Documentation>公式ドキュメント</a>
+を和訳した内容が中心となっています。</p>
+<h2 id=概要>概要</h2>
+<ul>
+<li><a href=https://github.com/buildingSMART/ifcJSON>github</a></li>
+<li>ifcを保守運用しているBuildingSMARTが作成している</li>
+<li>pythonで書かれている</li>
+<li>ifcの対応バージョンはifc2x3, ifc4.0, ifc4.3</li>
 </ul>
+<h2 id=ifc2jsonが解決する問題>ifc2jsonが解決する問題</h2>
+<ul>
+<li>多くの開発者はEXPRESSや<a href=https://www.adobe.com/jp/creativecloud/file-types/image/vector/step-file.html>STP</a>
+のインスタンスファイルを閲覧したり使用したりしたことがほとんどない。そのため、純正のIFCファイルは必要なデータを抽出するのに必要な労力が増加してしまう。</li>
+<li>IFCのデータは通常IFCファイルを介して交換されるが、これはほとんどの設計・建設プロジェクトや製品に見られる、リンクされ分散し変化するデータとは相性が悪い。</li>
+</ul>
+<p>1つ目に関しては、IFCファイルをそのまま閲覧したり編集したりするのは難しいということである。<br>
+2つ目に関しては、ifcは建築物のデータベースであるのでifcファイルは変化を伴うデータベースとして適した形式ではないということである。</p>
+<h2 id=目的>目的</h2>
+<ul>
+<li>ifcのために推奨される単一のjson仕様を指定することを目的としている</li>
+</ul>
+<h2 id=開発戦略>開発戦略</h2>
+<p>ifcをjsonとする場合、考慮すべきいくつかの基準がある。</p>
+<ul>
+<li>後方互換性</li>
+<li>相互変換の容易性</li>
+<li>可読性、直感性</li>
+<li>柔軟性、拡張性</li>
+<li>コードとの統合性</li>
+<li>XML形式との並列性</li>
+<li>EXPRESSスキーマとの並列性</li>
+<li>明確な参照構造（フラットやネスト）</li>
+</ul>
+<p>一方で上記の内容全てを満たすことは不可能であるため、以下の内容を満たすことをifc2jsonでは開発戦略としている。</p>
+<ul>
+<li>後方互換性</li>
+<li>相互変換の容易性</li>
+<li>EXPRESSスキーマとの並列性</li>
+</ul>
+<p>ifc2jsonにおいて、一番重要であるのはオリジナルのIFC EXPRESSスキーマに存在するもの全てを含むことである。</p>
+<h2 id=仕様>仕様</h2>
+<ol>
+<li>IFC EXPRESS Schemaで必須である多くのオブジェクト、キー、エンティティは変換する際においては必須ではない。つまり、必要最低限の情報のみでjsonに変換することができる。</li>
+<li>値としてnullやuserdefined、notdefinedを持つ属性の変換は非推奨である。</li>
+<li>ヘッダーはSPFファイルのヘッダー内容を受け継いでいる</li>
+<li>インスタンスのユニーク性はglobalIdで判別される</li>
+<li>ifcJsonの構造は柔軟であるため木構造にすることも可能である。</li>
+<li>パラメータの名前はcamelCaseで記述する</li>
+<li>IFCtypeはtypeという属性に、object typeはobjectTypeに格納される</li>
+<li>ジオメトリについてはSTEPファイルの内容を変換する</li>
+<li>属性情報についてはifc EXPRESSの内容を変換する</li>
+</ol>
+<h2 id=その他>その他</h2>
+<p>その他の詳細な内容等については、<a href=https://github.com/buildingSMART/ifcJSON/tree/master/Documentation>公式ドキュメント</a>
+及び<a href=https://github.com/buildingSMART/ifcJSON>公式github</a>でのpull requestなどを用いて閲覧・検索してみてください。</p>
+</div>
+<h2 class=post_related>Posts in this Series</h2>
+<ul>
+</ul>
+<div class=post_comments>
+</div>
+</article>
 <aside class=sidebar>
 <section class=sidebar_inner>
 <h2>abobon(Keitaro Watanabe)</h2>
@@ -132,17 +170,11 @@ ifcJSON 本記事ではifcJSONについての概要や開発戦略を記載し�
 プログラミング x 建築
 </div>
 <a href=https://ktaroabobon.github.io/about/ class="button mt-1" role=button title=続きを読む>続きを読む</a>
-<h2 class=mt-4>特集記事</h2>
+<h2 class=mt-4>本シリーズの記事</h2>
 <ul>
-<li>
-<a href=https://ktaroabobon.github.io/post/ifcjson-about/ class=nav-link title=ifc2jsonについて>ifc2jsonについて</a>
-</li>
 </ul>
 <h2 class=mt-4>最近の記事</h2>
 <ul class=flex-column>
-<li>
-<a href=https://ktaroabobon.github.io/post/ifcjson-about/ class=nav-link title=ifc2jsonについて>ifc2jsonについて</a>
-</li>
 </ul>
 <div>
 <h2 class="mt-4 taxonomy" id=categories-section>カテゴリー</h2>
