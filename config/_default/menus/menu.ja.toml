@@ -26,8 +26,8 @@ name = "LinkedIn"
 url = "https://www.linkedin.com/in/ktaroabobon/"
 
 [[main]]
-name = "qiita"
-weight = 4
+parent = "Links"
+name = "Qiita"
 url = "https://qiita.com/ktaroabobon"
 
 [[main]]
