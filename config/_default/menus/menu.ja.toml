@@ -31,11 +31,6 @@ name = "github"
 url = "https://github.com/ktaroabobon/"
 
 [[main]]
-parent = "Links"
-name = "Qiita"
-url = "https://qiita.com/ktaroabobon"
-
-[[main]]
 name = "About"
 url = "about/"
 weight = -107
