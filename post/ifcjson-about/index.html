@@ -100,8 +100,8 @@ share:
 </div>
 </span>
 </div>
-<div class=post_body><p>本記事ではifcJSONについての概要や開発戦略を記載しています。また、その内容については<a href=https://github.com/buildingSMART/ifcJSON/tree/master/Documentation>公式ドキュメント</a>
-を和訳した内容が中心となっています。</p>
+<div class=post_body><p>本記事ではifcJSONについての概要や開発戦略を記載おり、<a href=https://github.com/buildingSMART/ifcJSON/tree/master/Documentation>公式ドキュメント</a>
+を和訳したものが中心となっています。</p>
 <h2 id=概要>概要</h2>
 <ul>
 <li><a href=https://github.com/buildingSMART/ifcJSON>github</a></li>
@@ -109,44 +109,43 @@ share:
 <li>pythonで書かれている</li>
 <li>ifcの対応バージョンはifc2x3, ifc4.0, ifc4.3</li>
 </ul>
-<h2 id=ifcjsonが解決する問題>ifcJSONが解決する問題</h2>
+<h2 id=ifcjsonによって解決する問題>ifcJSONによって解決する問題</h2>
 <ul>
-<li>多くの開発者はEXPRESSや<a href=https://www.adobe.com/jp/creativecloud/file-types/image/vector/step-file.html>STP</a>
-のインスタンスファイルを閲覧したり使用したりしたことがほとんどない。そのため、純正のIFCファイルは必要なデータを抽出するのに必要な労力が増加してしまう。</li>
-<li>IFCのデータは通常IFCファイルを介して交換されるが、これはほとんどの設計・建設プロジェクトや製品に見られる、リンクされ分散し変化するデータとは相性が悪い。</li>
+<li>開発者の中にはEXPRESSやSTPのファイルを閲覧・使用した経験がほとんどない人もいるため、IFC-stpファイル等を用いて必要なデータを抽出するには労力が増加してしまう。</li>
+<li>IFCのデータは通常IFC-stpファイル等を介して交換されるが、これはほとんどの設計・建設プロジェクトや製品に当てはまる、膨大な量の製品が異なった定義や属性情報を持ち、それらが互いに依存して成立しているデータとは相性が悪い。</li>
 </ul>
-<p>1つ目に関しては、IFCファイルをそのまま閲覧したり編集したりするのは難しいということである。<br>
-2つ目に関しては、ifcは建築物のデータベースであるのでifcファイルは変化を伴うデータベースとして適した形式ではないということである。</p>
+<p>1つ目に関しては、IFCファイルを直接閲覧・編集を行うのは難しいということである。<br>
+2つ目に関しては、ifcは建築物のデータベースの形式の1つであるのでそれをファイル形式でデータの保存・交換を行うことは適していないということである。</p>
 <h2 id=目的>目的</h2>
 <ul>
-<li>ifcのために推奨される単一のjson仕様を指定することを目的としている</li>
+<li>ifcのために推奨される単一のjson仕様を定義することを目的としている</li>
 </ul>
 <h2 id=開発戦略>開発戦略</h2>
-<p>ifcをjsonとする場合、考慮すべきいくつかの基準がある。</p>
+<p>ifcをjsonに変換する場合、考慮すべきいくつかの基準がある。</p>
 <ul>
 <li>後方互換性</li>
-<li>相互変換の容易性</li>
+<li>ifcファイルとjson間での相互変換の容易性</li>
 <li>可読性、直感性</li>
 <li>柔軟性、拡張性</li>
-<li>コードとの統合性</li>
+<li>コードとの親和性</li>
 <li>XML形式との並列性</li>
 <li>EXPRESSスキーマとの並列性</li>
-<li>明確な参照構造（フラットやネスト）</li>
+<li>明確な参照構造（フラット構造やネスト構造）</li>
 </ul>
-<p>一方で上記の内容全てを満たすことは不可能であるため、以下の内容を満たすことをifc2jsonでは開発戦略としている。</p>
+<p>一方で上記の内容全てを満たすことは不可能であるため、以下の内容を満たすことをifcJSONでは開発戦略としている。</p>
 <ul>
 <li>後方互換性</li>
-<li>相互変換の容易性</li>
+<li>ifcファイルとjson間での相互変換の容易性</li>
 <li>EXPRESSスキーマとの並列性</li>
 </ul>
-<p>ifc2jsonにおいて、一番重要であるのはオリジナルのIFC EXPRESSスキーマに存在するもの全てを含むことである。</p>
+<p>ifcJSONにおいて、一番重要であるのはオリジナルのIFC EXPRESSスキーマに存在する全ての定義を含むことである。</p>
 <h2 id=仕様>仕様</h2>
 <ol>
-<li>IFC EXPRESS Schemaで必須である多くのオブジェクト、キー、エンティティは変換する際においては必須ではない。つまり、必要最低限の情報のみでjsonに変換することができる。</li>
+<li>IFC EXPRESS スキーマで必須である多くのオブジェクト、キー、エンティティは変換する際においては必須ではない。つまり、必要最低限の情報のみでjsonに変換することができる。</li>
 <li>値としてnullやuserdefined、notdefinedを持つ属性の変換は非推奨である。</li>
 <li>ヘッダーはSPFファイルのヘッダー内容を受け継いでいる</li>
-<li>インスタンスのユニーク性はglobalIdで判別される</li>
-<li>ifcJsonの構造は柔軟であるため木構造にすることも可能である。</li>
+<li>インスタンスのユニーク性はglobalIdで保証される</li>
+<li>ifcJSONの構造の変更は柔軟であるため木構造にすることも可能である。</li>
 <li>パラメータの名前はcamelCaseで記述する</li>
 <li>IFCtypeはtypeという属性に、object typeはobjectTypeに格納される</li>
 <li>ジオメトリについてはSTEPファイルの内容を変換する</li>
