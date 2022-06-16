@@ -13,7 +13,7 @@ categories = [
 ]
 series = ["ifc2json"]
 thumbnail = "images/building.png"
-draft = false
+draft = true
 
 +++
 
@@ -122,7 +122,7 @@ services:
     tty: true
 ```
 
-続いて、Dockerfileには以下の内容を記述します。
+Dockerfileには以下の内容を記述します。
 実行においてifcopenshellが必要であるためその環境を構築します。
 
 ```dockerfile
@@ -148,6 +148,21 @@ EXPOSE 8000
 ```
 
 ifcopenshellをDockerを用いて環境構築を行う詳しい内容は[こちらの記事](https://qiita.com/ktaroabobon/items/c276c76e4dc3442a041b)を参照してください。
+
+続いて、依存パッケージの管理を行います。今回はpoetryを用いて行っています。
+詳しい方法は[公式ドキュメント](https://cocoatomo.github.io/poetry-ja/)等を参照してください。
+
+また、使用するパッケージとしては以下の通りです。
+
+> pandas
+
+全て完了したら、環境構築を実行していきます。
+
+```bash
+cd file_conveters
+
+docker-compose up -d
+```
 
 ### 実行
 
