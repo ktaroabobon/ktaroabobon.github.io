@@ -159,12 +159,37 @@ ifcopenshellをDockerを用いて環境構築を行う詳しい内容は[こち�
 全て完了したら、環境構築を実行していきます。
 
 ```bash
-cd file_conveters
+cd file_converters
 
 docker-compose up -d
+
+{poetryのコマンド}
 ```
 
+これで、Dockerを用いた環境構築は終了です。
+
 ### 実行
+
+先ほど立ち上げた環境内でifcファイルを変換していきます。
+手元にifcのサンプルファイルがない方は、[こちら](https://github.com/IFCjs/hello-world/tree/main/IFC)等からサンプルモデルをダンロードして使用してみましょう。
+
+まず、file_converters/dataset/inputにifcファイルを格納します。
+
+続いて、Docker環境においてifc2json.pyファイルを実行します。
+
+```bash
+{実行コマンド}
+```
+
+また、実行する際のパラメータは以下の通りです。
+
+> ifc2json
+>> -i: inputファイルのパスを指定します。  
+>> -o: outputファイルのパスを指定します。  
+>> -v: ifcJSONのバージョンを指定します。デフォルトでは4が指定されています。  
+>> -c: jsonに変換される際にインデントをなくし、type情報を格納せずに出力する。  
+>> 
+
 
 ## その他
 
