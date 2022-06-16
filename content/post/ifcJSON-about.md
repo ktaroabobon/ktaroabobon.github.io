@@ -2,7 +2,7 @@
 author = "ktaroabobon"
 title = "ifcJSONについて"
 date = "2022-05-08"
-description = "IFCファイルをjsonに変換するコンバータの一つであるifc2jsonの解説"
+description = "IFCファイルをjsonに変換するコンバータの一つであるifcJSONの解説"
 featured = true
 tags = [
 "ifcJSON",
