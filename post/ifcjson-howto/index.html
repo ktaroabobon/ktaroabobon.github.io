@@ -1,28 +1,25 @@
-<!doctype html><html lang=ja data-figures>
+<!doctype html><html lang=ja data-figures class=page>
 <head>
-<title>タグ | abobonのサイト</title>
+<title>ifcJSONの使い方 | abobonのサイト</title>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-X2928PD70C"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-X2928PD70C')</script>
 <meta property="og:locale" content="ja">
-<meta property="og:locale:alternate" content="en">
-<meta property="og:locale:alternate" content="pt">
 <meta property="og:type" content="article">
-<meta name=description content>
+<meta name=description content="IFCファイルをjsonに変換するコンバータの一つであるifcJSONの使い方の解説">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:creator content="__abobon__">
-<meta name=twitter:title content="Tags">
-<meta property="og:url" content="https://ktaroabobon.github.io/tags/">
-<meta property="og:title" content="Tags">
-<meta property="og:description" content>
-<meta property="og:image" content="https://ktaroabobon.github.io/images/thumbnail.png">
+<meta name=twitter:title content="ifcJSONの使い方">
+<meta property="og:url" content="https://ktaroabobon.github.io/post/ifcjson-howto/">
+<meta property="og:title" content="ifcJSONの使い方">
+<meta property="og:description" content="IFCファイルをjsonに変換するコンバータの一つであるifcJSONの使い方の解説">
+<meta property="og:image" content="https://ktaroabobon.github.io/post/ifcjson-howto/images/building.png">
 <link rel=apple-touch-icon sizes=180x180 href=https://ktaroabobon.github.io/icons/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=https://ktaroabobon.github.io/icons/favicon-32x32.png>
 <link rel=manifest href=https://ktaroabobon.github.io/icons/site.webmanifest>
-<link rel=canonical href=https://ktaroabobon.github.io/tags/>
-<link rel=alternate type=application/rss+xml href=https://ktaroabobon.github.io/tags/index.xml title=abobonのサイト>
+<link rel=canonical href=https://ktaroabobon.github.io/post/ifcjson-howto/>
 <link rel=preload href=https://ktaroabobon.github.io/css/styles.01869c76e4757810d94ecbdccadba853d9d01d9416dfeb113df02e1479ff8b36e284e8bfeb3e8f353f2fdcdcbbdfcf27e558dbda96eb6341bfc304d55cd9e986.css integrity="sha512-AYacduR1eBDZTsvcytuoU9nQHZQW3+sRPfAuFHn/izbihOi/6z6PNT8v3Ny7388n5Vjb2pbrY0G/wwTVXNnphg==" as=style crossorigin=anonymous>
 <link rel=preload href=https://ktaroabobon.github.io/js/bundle.min.061d04727b51b0a8fafe2f15b9370a961f33306e7af52abd00d69c906f5d825f1599306159d7756d7d2b4f359767a170625ae541d1f37d05c1daa4d5c7feec25.js as=script integrity="sha512-Bh0EcntRsKj6/i8VuTcKlh8zMG569Sq9ANackG9dgl8VmTBhWdd1bX0rTzWXZ6FwYlrlQdHzfQXB2qTVx/7sJQ==" crossorigin=anonymous>
 <link rel=stylesheet type=text/css href=https://ktaroabobon.github.io/css/styles.01869c76e4757810d94ecbdccadba853d9d01d9416dfeb113df02e1479ff8b36e284e8bfeb3e8f353f2fdcdcbbdfcf27e558dbda96eb6341bfc304d55cd9e986.css integrity="sha512-AYacduR1eBDZTsvcytuoU9nQHZQW3+sRPfAuFHn/izbihOi/6z6PNT8v3Ny7388n5Vjb2pbrY0G/wwTVXNnphg==" crossorigin=anonymous>
@@ -79,150 +76,207 @@
 </header>
 <main>
 <div class="grid-inverse wrap content">
-<ul class=posts id=posts>
-<li class=post_item>
-<div class=excerpt>
-<div class=excerpt_header>
-<h3 class=post_link>
-<a href=https://ktaroabobon.github.io/tags/ifcjson/ title=ifcJSON>ifcJSON</a>
-</h3>
+<article class=post_content>
+<h1 class=post_title>ifcJSONの使い方</h1>
 <div class=post_meta>
 <span><svg class="icon"><use xlink:href="#calendar"/></svg></span>
 <span class=post_date>
 Jun 18, 2022</span>
-<span class=post_time> · 読み終えるまでの時間：0分</span>
+<span class=post_time> · 読み終えるまでの時間：2分</span><span>&nbsp;· <a href=https://ktaroabobon.github.io/tags/ifcjson title=ifcJSON class="post_tag button button_translucent">ifcJSON
+</a>
+</span>
 <span class=page_only>&nbsp;·
 <div class=post_share>
 share:
-<a href="https://twitter.com/intent/tweet?text=ifcJSON&url=https%3a%2f%2fktaroabobon.github.io%2ftags%2fifcjson%2f&tw_p=tweetbutton" class=twitter title="share Twitter" target=_blank rel=nofollow><svg class="icon"><use xlink:href="#twitter"/></svg>
+<a href="https://twitter.com/intent/tweet?text=ifcJSON%e3%81%ae%e4%bd%bf%e3%81%84%e6%96%b9&url=https%3a%2f%2fktaroabobon.github.io%2fpost%2fifcjson-howto%2f&tw_p=tweetbutton" class=twitter title="share Twitter" target=_blank rel=nofollow><svg class="icon"><use xlink:href="#twitter"/></svg>
 </a>
-<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fktaroabobon.github.io%2ftags%2fifcjson%2f&t=ifcJSON" class=facebook title="share Facebook" target=_blank rel=nofollow><svg class="icon"><use xlink:href="#facebook"/></svg>
+<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fktaroabobon.github.io%2fpost%2fifcjson-howto%2f&t=ifcJSON%e3%81%ae%e4%bd%bf%e3%81%84%e6%96%b9" class=facebook title="share Facebook" target=_blank rel=nofollow><svg class="icon"><use xlink:href="#facebook"/></svg>
 </a>
 <a href=#linkedinshare id=linkedinshare class=linkedin title="share LinkedIn" rel=nofollow><svg class="icon"><use xlink:href="#linkedin"/></svg>
 </a>
-<a href=https://ktaroabobon.github.io/tags/ifcjson/ title="Copy Link" class="link link_yank"><svg class="icon"><use xlink:href="#copy"/></svg>
+<a href=https://ktaroabobon.github.io/post/ifcjson-howto/ title="Copy Link" class="link link_yank"><svg class="icon"><use xlink:href="#copy"/></svg>
 </a>
 </div>
 </span>
 </div>
-</div>
-<div class=excerpt_footer>
-<div>
-<p class=pale>
-</p>
-<a href=https://ktaroabobon.github.io/tags/ifcjson/ title=続きを読む class="excerpt_more button">続きを読む</a>
-</div>
-</div>
-</div>
-</li>
-<li class=post_item>
-<div class=excerpt>
-<div class=excerpt_header>
-<h3 class=post_link>
-<a href=https://ktaroabobon.github.io/tags/ifcopenshell/ title=ifcopenshell>ifcopenshell</a>
-</h3>
-<div class=post_meta>
-<span><svg class="icon"><use xlink:href="#calendar"/></svg></span>
-<span class=post_date>
-Jun 18, 2022</span>
-<span class=post_time> · 読み終えるまでの時間：0分</span>
-<span class=page_only>&nbsp;·
-<div class=post_share>
-share:
-<a href="https://twitter.com/intent/tweet?text=ifcopenshell&url=https%3a%2f%2fktaroabobon.github.io%2ftags%2fifcopenshell%2f&tw_p=tweetbutton" class=twitter title="share Twitter" target=_blank rel=nofollow><svg class="icon"><use xlink:href="#twitter"/></svg>
-</a>
-<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fktaroabobon.github.io%2ftags%2fifcopenshell%2f&t=ifcopenshell" class=facebook title="share Facebook" target=_blank rel=nofollow><svg class="icon"><use xlink:href="#facebook"/></svg>
-</a>
-<a href=#linkedinshare id=linkedinshare class=linkedin title="share LinkedIn" rel=nofollow><svg class="icon"><use xlink:href="#linkedin"/></svg>
-</a>
-<a href=https://ktaroabobon.github.io/tags/ifcopenshell/ title="Copy Link" class="link link_yank"><svg class="icon"><use xlink:href="#copy"/></svg>
-</a>
-</div>
-</span>
-</div>
-</div>
-<div class=excerpt_footer>
-<div>
-<p class=pale>
-</p>
-<a href=https://ktaroabobon.github.io/tags/ifcopenshell/ title=続きを読む class="excerpt_more button">続きを読む</a>
-</div>
-</div>
-</div>
-</li>
-<li class=post_item>
-<div class=excerpt>
-<div class=excerpt_header>
-<h3 class=post_link>
-<a href=https://ktaroabobon.github.io/tags/%E3%83%A1%E3%83%A2/ title=メモ>メモ</a>
-</h3>
-<div class=post_meta>
-<span><svg class="icon"><use xlink:href="#calendar"/></svg></span>
-<span class=post_date>
-Jun 18, 2022</span>
-<span class=post_time> · 読み終えるまでの時間：0分</span>
-<span class=page_only>&nbsp;·
-<div class=post_share>
-share:
-<a href="https://twitter.com/intent/tweet?text=%e3%83%a1%e3%83%a2&url=https%3a%2f%2fktaroabobon.github.io%2ftags%2f%25E3%2583%25A1%25E3%2583%25A2%2f&tw_p=tweetbutton" class=twitter title="share Twitter" target=_blank rel=nofollow><svg class="icon"><use xlink:href="#twitter"/></svg>
-</a>
-<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fktaroabobon.github.io%2ftags%2f%25E3%2583%25A1%25E3%2583%25A2%2f&t=%e3%83%a1%e3%83%a2" class=facebook title="share Facebook" target=_blank rel=nofollow><svg class="icon"><use xlink:href="#facebook"/></svg>
-</a>
-<a href=#linkedinshare id=linkedinshare class=linkedin title="share LinkedIn" rel=nofollow><svg class="icon"><use xlink:href="#linkedin"/></svg>
-</a>
-<a href=https://ktaroabobon.github.io/tags/%E3%83%A1%E3%83%A2/ title="Copy Link" class="link link_yank"><svg class="icon"><use xlink:href="#copy"/></svg>
-</a>
-</div>
-</span>
-</div>
-</div>
-<div class=excerpt_footer>
-<div>
-<p class=pale>
-</p>
-<a href=https://ktaroabobon.github.io/tags/%E3%83%A1%E3%83%A2/ title=続きを読む class="excerpt_more button">続きを読む</a>
-</div>
-</div>
-</div>
-</li>
-<li class=post_item>
-<div class=excerpt>
-<div class=excerpt_header>
-<h3 class=post_link>
-<a href=https://ktaroabobon.github.io/tags/index/ title=index>index</a>
-</h3>
-<div class=post_meta>
-<span><svg class="icon"><use xlink:href="#calendar"/></svg></span>
-<span class=post_date>
-Jan 1, 0001</span>
-<span class=post_time> · 読み終えるまでの時間：0分</span>
-<span class=page_only>&nbsp;·
-<div class=post_share>
-share:
-<a href="https://twitter.com/intent/tweet?text=index&url=https%3a%2f%2fktaroabobon.github.io%2ftags%2findex%2f&tw_p=tweetbutton" class=twitter title="share Twitter" target=_blank rel=nofollow><svg class="icon"><use xlink:href="#twitter"/></svg>
-</a>
-<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fktaroabobon.github.io%2ftags%2findex%2f&t=index" class=facebook title="share Facebook" target=_blank rel=nofollow><svg class="icon"><use xlink:href="#facebook"/></svg>
-</a>
-<a href=#linkedinshare id=linkedinshare class=linkedin title="share LinkedIn" rel=nofollow><svg class="icon"><use xlink:href="#linkedin"/></svg>
-</a>
-<a href=https://ktaroabobon.github.io/tags/index/ title="Copy Link" class="link link_yank"><svg class="icon"><use xlink:href="#copy"/></svg>
-</a>
-</div>
-</span>
-</div>
-</div>
-<div class=excerpt_footer>
-<div>
-<p class=pale>
-</p>
-<a href=https://ktaroabobon.github.io/tags/index/ title=続きを読む class="excerpt_more button">続きを読む</a>
-</div>
-</div>
-</div>
-</li>
-<li>
-</li>
+<div class=post_body><p>本記事ではifcJSONについての使い方を解説しています。</p>
+<h2 id=概要>概要</h2>
+<ul>
+<li><a href=https://github.com/buildingSMART/ifcJSON>github</a></li>
+<li>ifcファイルをjson形式に変換する</li>
+<li>ifcを保守運用しているBuildingSMARTが作成している</li>
+<li>pythonで書かれている</li>
+<li>ifcの対応バージョンはifc2x3, ifc4.0, ifc4.3</li>
+<li>このコンバータの目的や開発戦略についての解説は<a href=https://ktaroabobon.github.io/post/ifcjson-about/>こちら</a>から</li>
 </ul>
+<h2 id=実行環境事前準備>実行環境・事前準備</h2>
+<p>本記事の内容はDockerを用いて環境構築を行いました。<br>
+Dockerのインストールについては<a href=https://www.docker.com/products/docker-desktop/>こちら</a>から</p>
+<h2 id=使い方>使い方</h2>
+<h3 id=ダウンロード>ダウンロード</h3>
+<p>まずは、手元のpcにgithubのリポジトリからダウンロードしましょう。</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=ln>1</span>git clone https://github.com/ktaroabobon/ifcJSON.git
+</code></pre></div><p>構成は以下のようになっています</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=ln> 1</span>.
+<span class=ln> 2</span>├── Documentation
+<span class=ln> 3</span>│   └── README.md
+<span class=ln> 4</span>├── LICENSE
+<span class=ln> 5</span>├── README.md
+<span class=ln> 6</span>├── Samples
+<span class=ln> 7</span>├── Schema
+<span class=ln> 8</span>├── file_converters
+<span class=ln> 9</span>│   ├── README.md
+<span class=ln>10</span>│   ├── dataset
+<span class=ln>11</span>│   │   ├── input
+<span class=ln>12</span>│   │   └── output
+<span class=ln>13</span>│   ├── ifc2json.py
+<span class=ln>14</span>│   ├── ifcjson
+<span class=ln>15</span>│   ├── json2ifc.py
+<span class=ln>16</span>│   └── samples.py
+<span class=ln>17</span>└── schema_converters
+</code></pre></div><p>それぞれのディレクトリの内容は以下の通りです。</p>
+<ul>
+<li>Documentation: ifcJSONについてのドキュメント</li>
+<li>LICENSE: ライセンスについて</li>
+<li>README.md: README</li>
+<li>Samples: jsonに変換したサンプルデータ等が格納されている</li>
+<li>Schema: ifcJSONのスキーマについて書かれている</li>
+<li>file_converters: 変換する際の実行ファイルが格納されている</li>
+<li>schema_converters: スキーマを変換する実行ファイル</li>
+</ul>
+<p>今回主に使用するのはfile_converters内のファイルです。</p>
+<h3 id=環境構築>環境構築</h3>
+<p>本記事ではDockerを用いて環境構築を行います。<br>
+実行ファイルはfile_converters内のものを用いて行うため、Dockerfile等のファイルをfile_converters内で作成します。</p>
+<p>はじめに、依存パッケージの管理を行います。今回はpoetryを用いて行っています。
+詳しい方法は<a href=https://cocoatomo.github.io/poetry-ja/>公式ドキュメント</a>等を参照してください。</p>
+<p>また、使用するパッケージとしては以下の通りです。実行においてifcopenshellが必要であるためそのパッケージを追加するのを忘れないようにしてください。</p>
+<blockquote>
+<p>pandas<br>
+python-ifcopenshell</p>
+</blockquote>
+<p>poetryを実行後のファイル構成</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=ln> 1</span>.
+<span class=ln> 2</span>├── ⚫️poetry.lock
+<span class=ln> 3</span>├── ⚫️pyproject.toml
+<span class=ln> 4</span>├── README.md
+<span class=ln> 5</span>├── dataset
+<span class=ln> 6</span>│   ├── input
+<span class=ln> 7</span>│   └── output
+<span class=ln> 8</span>├── ifc2json.py
+<span class=ln> 9</span>├── ifcjson
+<span class=ln>10</span>│   ├── __init__.py
+<span class=ln>11</span>│   ├── common.py
+<span class=ln>12</span>│   ├── ifc2json4.py
+<span class=ln>13</span>│   ├── ifc2json5a.py
+<span class=ln>14</span>│   ├── mesh.py
+<span class=ln>15</span>│   ├── reader.py
+<span class=ln>16</span>│   └── to_ifcopenshell.py
+<span class=ln>17</span>├── json2ifc.py
+<span class=ln>18</span>└── samples.py
+</code></pre></div><p>続いて、file_converters内にDockerfileとdocker-compose.ymlファイルを作成します。</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=ln> 1</span>.
+<span class=ln> 2</span>├── ⚫️Dockerfile
+<span class=ln> 3</span>├── ⚫️docker-compose.yml
+<span class=ln> 4</span>├── poetry.lock
+<span class=ln> 5</span>├── pyproject.toml├── README.md
+<span class=ln> 6</span>├── dataset
+<span class=ln> 7</span>│   ├── input
+<span class=ln> 8</span>│   └── output
+<span class=ln> 9</span>├── ifc2json.py
+<span class=ln>10</span>├── ifcjson
+<span class=ln>11</span>│   ├── __init__.py
+<span class=ln>12</span>│   ├── common.py
+<span class=ln>13</span>│   ├── ifc2json4.py
+<span class=ln>14</span>│   ├── ifc2json5a.py
+<span class=ln>15</span>│   ├── mesh.py
+<span class=ln>16</span>│   ├── reader.py
+<span class=ln>17</span>│   └── to_ifcopenshell.py
+<span class=ln>18</span>├── json2ifc.py
+<span class=ln>19</span>└── samples.py
+</code></pre></div><p>docker-compose.ymlには以下の内容を記述します。</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=ln> 1</span><span class=nt>version</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;3.8&#39;</span><span class=w>
+</span><span class=ln> 2</span><span class=w></span><span class=nt>services</span><span class=p>:</span><span class=w>
+</span><span class=ln> 3</span><span class=w>  </span><span class=nt>ifcjson</span><span class=p>:</span><span class=w>
+</span><span class=ln> 4</span><span class=w>    </span><span class=nt>container_name</span><span class=p>:</span><span class=w> </span><span class=l>ifcjson</span><span class=w>
+</span><span class=ln> 5</span><span class=w>    </span><span class=nt>build</span><span class=p>:</span><span class=w>
+</span><span class=ln> 6</span><span class=w>      </span><span class=nt>context</span><span class=p>:</span><span class=w> </span><span class=l>.</span><span class=w>
+</span><span class=ln> 7</span><span class=w>      </span><span class=nt>dockerfile</span><span class=p>:</span><span class=w> </span><span class=l>./Dockerfile</span><span class=w>
+</span><span class=ln> 8</span><span class=w>    </span><span class=nt>ports</span><span class=p>:</span><span class=w>
+</span><span class=ln> 9</span><span class=w>      </span>- <span class=s2>&#34;8000:8000&#34;</span><span class=w>
+</span><span class=ln>10</span><span class=w>    </span><span class=nt>tty</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span><span class=ln>11</span><span class=w>    </span><span class=nt>volumes</span><span class=p>:</span><span class=w>
+</span><span class=ln>12</span><span class=w>      </span>- <span class=l>.:/code/</span><span class=w>
+</span><span class=ln>13</span><span class=w>      </span>- <span class=l>${PIP_CACHE_DIR_DETECTION:-cache-detection}:/root/.cache</span><span class=w>
+</span><span class=ln>14</span><span class=w>
+</span><span class=ln>15</span><span class=w></span><span class=nt>volumes</span><span class=p>:</span><span class=w>
+</span><span class=ln>16</span><span class=w>  </span><span class=nt>cache-detection</span><span class=p>:</span><span class=w>
+</span></code></pre></div><p>Dockerfileには以下の内容を記述します。</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-dockerfile data-lang=dockerfile><span class=ln> 1</span><span class=k>FROM</span><span class=s> python:3.9</span><span class=err>
+</span><span class=ln> 2</span><span class=err>
+</span><span class=ln> 3</span><span class=err></span><span class=k>ENV</span> <span class=nv>APP_PATH</span><span class=o>=</span>/code <span class=se>\
+</span><span class=ln> 4</span><span class=se></span>    <span class=nv>PYTHONPATH</span><span class=o>=</span>.<span class=err>
+</span><span class=ln> 5</span><span class=err></span><span class=c>#　開発物のソースコードはcodeデイレクトリ下に配置する</span><span class=err>
+</span><span class=ln> 6</span><span class=err>
+</span><span class=ln> 7</span><span class=err></span><span class=k>WORKDIR</span><span class=s> $APP_PATH</span><span class=err>
+</span><span class=ln> 8</span><span class=err>
+</span><span class=ln> 9</span><span class=err></span><span class=k>RUN</span> apt-get update <span class=o>&amp;&amp;</span> <span class=se>\
+</span><span class=ln>10</span><span class=se></span>    apt-get upgrade -y <span class=o>&amp;&amp;</span> <span class=se>\
+</span><span class=ln>11</span><span class=se></span>    pip install poetry<span class=err>
+</span><span class=ln>12</span><span class=err></span><span class=c># コンテナのセットアップ</span><span class=err>
+</span><span class=ln>13</span><span class=err>
+</span><span class=ln>14</span><span class=err></span><span class=k>COPY</span> . .<span class=err>
+</span><span class=ln>15</span><span class=err>
+</span><span class=ln>16</span><span class=err></span><span class=k>RUN</span> poetry install<span class=err>
+</span><span class=ln>17</span><span class=err></span><span class=c>#　必要なパッケージ等をインストールする</span><span class=err>
+</span><span class=ln>18</span><span class=err>
+</span><span class=ln>19</span><span class=err></span><span class=k>EXPOSE</span><span class=s> 8000</span><span class=err>
+</span></code></pre></div><p>全て完了したら、環境構築をしていきます。</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=ln>1</span><span class=nb>cd</span> file_converters
+<span class=ln>2</span>
+<span class=ln>3</span>docker-compose up -d
+</code></pre></div><p>これで、Dockerを用いた環境構築は終了です。</p>
+<h3 id=実行>実行</h3>
+<p>先ほど立ち上げた環境内でifcファイルを変換していきます。
+手元にifcのサンプルファイルがない方は、<a href=https://github.com/IFCjs/hello-world/tree/main/IFC>こちら</a>等からサンプルモデルをダンロードして使用してみましょう。</p>
+<p>まず、file_converters/dataset/inputにifcファイルを格納します。</p>
+<p>続いて、Docker環境においてifc2json.pyファイルを実行します。下記の実行コマンド内のパラメータは環境に合わせたを設定してください。</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=ln>1</span>docker <span class=nb>exec</span> ifcjson poetry run python ifc2json.py -i dataset/input/test.ifc -o dataset/output/test.json --compact
+</code></pre></div><blockquote>
+<p>ifc2json</p>
+<blockquote>
+<p>-h, --help: このパッケージのヘルプを表示します。
+-i, I: inputファイルのパスを指定します。<br>
+-o, O: outputファイルのパスを指定します。<br>
+-v, V: ifcJSONのバージョンを指定します。デフォルトでは4が指定されています。<br>
+-c, --compact: jsonに変換される際にインデントをなくし、type情報を格納せずに出力する。<br>
+-n, --no_inverse: オブジェクトの逆参照を記載します。デフォルトではオンです。<br>
+-e, --empty_properties: 値がない属性情報も書き出します。デフォルトではオフです。<br>
+-w, --no_ownerhistory:<br>
+ifcJSONのバージョン4を指定している際IfcOwnerHistoryの情報を消去します。デフォルトではオフです。【警告】この設定をオンにするとIFC
+Schemaに則った変換ではなくなります。<br>
+-g GEOMETRY, --geometry GEOMETRY:<br>
+ジオメトリの書き出し設定を"none", "tessellate", "unchanged"
+から指定できます。デフォルトではunchangedが指定されています。【警告】この設定をnoneにするとIFC Schemaに則った変換ではなくなる可能性があります。</p>
+</blockquote>
+<p>json2ifc</p>
+<blockquote>
+<p>-i, I: inputファイルのパスを指定します。<br>
+-o, O: outputファイルのパスを指定します。</p>
+</blockquote>
+</blockquote>
+<p>実行が成功すると指定した場所にjsonファイルが格納され、処理時間が出力されます。</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=ln>1</span>Conversion took  65.31001250000008  seconds
+</code></pre></div><h2 id=その他>その他</h2>
+<p>その他の詳細な内容等については、<a href=https://github.com/buildingSMART/ifcJSON/tree/master/Documentation>公式ドキュメント</a>
+及び<a href=https://github.com/buildingSMART/ifcJSON>公式github</a>でのpull requestなどを用いて閲覧・検索してみてください。</p>
+</div>
+<h2 class=post_related>Posts in this Series</h2>
+<ul>
+</ul>
+<div class=post_comments>
+</div>
+</article>
 <aside class=sidebar>
 <section class=sidebar_inner>
 <h2>abobon(Keitaro Watanabe)</h2>
@@ -230,11 +284,11 @@ share:
 プログラミング x 建築
 </div>
 <a href=https://ktaroabobon.github.io/about/ class="button mt-1" role=button title=続きを読む>続きを読む</a>
+<h2 class=mt-4>本シリーズの記事</h2>
+<ul>
+</ul>
 <h2 class=mt-4>特集記事</h2>
 <ul>
-<li>
-<a href=https://ktaroabobon.github.io/post/ifcjson-howto/ class=nav-link title=ifcJSONの使い方>ifcJSONの使い方</a>
-</li>
 <li>
 <a href=https://ktaroabobon.github.io/post/ifcopenshell-howto/ class=nav-link title=python-ifcopenshellのインストール方法>python-ifcopenshellのインストール方法</a>
 </li>
@@ -244,9 +298,6 @@ share:
 </ul>
 <h2 class=mt-4>最近の記事</h2>
 <ul class=flex-column>
-<li>
-<a href=https://ktaroabobon.github.io/post/ifcjson-howto/ class=nav-link title=ifcJSONの使い方>ifcJSONの使い方</a>
-</li>
 <li>
 <a href=https://ktaroabobon.github.io/post/ifcopenshell-howto/ class=nav-link title=python-ifcopenshellのインストール方法>python-ifcopenshellのインストール方法</a>
 </li>
