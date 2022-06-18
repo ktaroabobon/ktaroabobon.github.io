@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ifcopenshell on abobonのサイト</title><link>https://ktaroabobon.github.io/categories/ifcopenshell/</link><description>Recent content in ifcopenshell on abobonのサイト</description><generator>Hugo -- gohugo.io</generator><language>ja</language><copyright>Copyright © 2008–2018, Steve Francia and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Thu, 16 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://ktaroabobon.github.io/categories/ifcopenshell/index.xml" rel="self" type="application/rss+xml"/><item><title>ifcJSONの使い方</title><link>https://ktaroabobon.github.io/post/ifcopenshell-howto/</link><pubDate>Thu, 16 Jun 2022 00:00:00 +0000</pubDate><guid>https://ktaroabobon.github.io/post/ifcopenshell-howto/</guid><description>
+ifcopenshellをpythonで使用する方法。
+目的 ifcopenshellをpythonで触りたいがpipでインストールをしたい
+方法 pypiにアップロードされているのでそれをダウンロードする
+1pip install python-ifcopenshell</description></item></channel></rss>
