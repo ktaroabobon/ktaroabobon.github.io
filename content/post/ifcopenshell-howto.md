@@ -1,8 +1,8 @@
 +++
 author = "ktaroabobon"
-title = "ifcJSONの使い方"
+title = "python-ifcopenshellのインストール方法"
 date = "2022-06-18"
-description = "IFCファイルをjsonに変換するコンバータの一つであるifcJSONの使い方の解説"
+description = "ifcopenshellをpythonで触る際のインストール方法のメモ"
 featured = true
 tags = [
 "ifcopenshell",
