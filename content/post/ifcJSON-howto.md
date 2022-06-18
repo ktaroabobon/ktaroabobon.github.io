@@ -1,7 +1,7 @@
 +++
 author = "ktaroabobon"
 title = "ifcJSONの使い方"
-date = "2022-06-16"
+date = "2022-06-18"
 description = "IFCファイルをjsonに変換するコンバータの一つであるifcJSONの使い方の解説"
 featured = true
 tags = [
@@ -13,7 +13,7 @@ categories = [
 ]
 series = ["ifc2json"]
 thumbnail = "images/building.png"
-draft = true
+draft = false
 
 +++
 
@@ -82,13 +82,45 @@ git clone https://github.com/ktaroabobon/ifcJSON.git
 本記事ではDockerを用いて環境構築を行います。  
 実行ファイルはfile_converters内のものを用いて行うため、Dockerfile等のファイルをfile_converters内で作成します。
 
-まず、file_converters内にDockerfileとdocker-compose.ymlファイルを作成します。
+はじめに、依存パッケージの管理を行います。今回はpoetryを用いて行っています。
+詳しい方法は[公式ドキュメント](https://cocoatomo.github.io/poetry-ja/)等を参照してください。
+
+また、使用するパッケージとしては以下の通りです。実行においてifcopenshellが必要であるためそのパッケージを追加するのを忘れないようにしてください。
+
+> pandas  
+> python-ifcopenshell
+
+poetryを実行後のファイル構成
+
+```bash
+.
+├── ⚫️poetry.lock
+├── ⚫️pyproject.toml
+├── README.md
+├── dataset
+│   ├── input
+│   └── output
+├── ifc2json.py
+├── ifcjson
+│   ├── __init__.py
+│   ├── common.py
+│   ├── ifc2json4.py
+│   ├── ifc2json5a.py
+│   ├── mesh.py
+│   ├── reader.py
+│   └── to_ifcopenshell.py
+├── json2ifc.py
+└── samples.py
+```
+
+続いて、file_converters内にDockerfileとdocker-compose.ymlファイルを作成します。
 
 ```bash
 .
 ├── ⚫️Dockerfile
 ├── ⚫️docker-compose.yml
-├── README.md
+├── poetry.lock
+├── pyproject.toml├── README.md
 ├── dataset
 │   ├── input
 │   └── output
@@ -110,60 +142,52 @@ docker-compose.ymlには以下の内容を記述します。
 ```yaml
 version: '3.8'
 services:
-  ifc2json:
-    container_name: ifc2json
+  ifcjson:
+    container_name: ifcjson
     build:
       context: .
       dockerfile: ./Dockerfile
-    volumes:
-      - ./:/code
     ports:
       - "8000:8000"
     tty: true
+    volumes:
+      - .:/code/
+      - ${PIP_CACHE_DIR_DETECTION:-cache-detection}:/root/.cache
+
+volumes:
+  cache-detection:
 ```
 
 Dockerfileには以下の内容を記述します。
-実行においてifcopenshellが必要であるためその環境を構築します。
 
 ```dockerfile
-FROM continuumio/miniconda3
+FROM python:3.9
 
 ENV APP_PATH=/code \
     PYTHONPATH=.
 #　開発物のソースコードはcodeデイレクトリ下に配置する
 
-RUN conda create -n ifc2json python==3.8
-
-SHELL ["conda", "run", "-n", "ifc2json", "/bin/bash", "-c"]
-RUN conda install -c conda-forge -c oce -c dlr-sc -c ifcopenshell ifcopenshell
-RUN conda install -c conda-forge poetry
-RUN conda install -c conda-forge poetry-core
-
 WORKDIR $APP_PATH
 
 RUN apt-get update && \
-    apt-get upgrade -y
+    apt-get upgrade -y && \
+    pip install poetry
+# コンテナのセットアップ
+
+COPY . .
+
+RUN poetry install
+#　必要なパッケージ等をインストールする
 
 EXPOSE 8000
 ```
 
-ifcopenshellをDockerを用いて環境構築を行う詳しい内容は[こちらの記事](https://qiita.com/ktaroabobon/items/c276c76e4dc3442a041b)を参照してください。
-
-続いて、依存パッケージの管理を行います。今回はpoetryを用いて行っています。
-詳しい方法は[公式ドキュメント](https://cocoatomo.github.io/poetry-ja/)等を参照してください。
-
-また、使用するパッケージとしては以下の通りです。
-
-> pandas
-
-全て完了したら、環境構築を実行していきます。
+全て完了したら、環境構築をしていきます。
 
 ```bash
 cd file_converters
 
 docker-compose up -d
-
-{poetryのコマンド}
 ```
 
 これで、Dockerを用いた環境構築は終了です。
@@ -175,21 +199,37 @@ docker-compose up -d
 
 まず、file_converters/dataset/inputにifcファイルを格納します。
 
-続いて、Docker環境においてifc2json.pyファイルを実行します。
+続いて、Docker環境においてifc2json.pyファイルを実行します。下記の実行コマンド内のパラメータは環境に合わせたを設定してください。
 
 ```bash
-{実行コマンド}
+docker exec ifcjson poetry run python ifc2json.py -i dataset/input/test.ifc -o dataset/output/test.json --compact
 ```
 
-また、実行する際のパラメータは以下の通りです。
-
 > ifc2json
->> -i: inputファイルのパスを指定します。  
->> -o: outputファイルのパスを指定します。  
->> -v: ifcJSONのバージョンを指定します。デフォルトでは4が指定されています。  
->> -c: jsonに変換される際にインデントをなくし、type情報を格納せずに出力する。  
->> 
+> > -h, --help: このパッケージのヘルプを表示します。
+> > -i, I: inputファイルのパスを指定します。  
+> > -o, O: outputファイルのパスを指定します。  
+> > -v, V: ifcJSONのバージョンを指定します。デフォルトでは4が指定されています。  
+> > -c, --compact: jsonに変換される際にインデントをなくし、type情報を格納せずに出力する。  
+> > -n, --no_inverse: オブジェクトの逆参照を記載します。デフォルトではオンです。  
+> > -e, --empty_properties: 値がない属性情報も書き出します。デフォルトではオフです。  
+> > -w, --no_ownerhistory:   
+> > ifcJSONのバージョン4を指定している際IfcOwnerHistoryの情報を消去します。デフォルトではオフです。【警告】この設定をオンにするとIFC
+> > Schemaに則った変換ではなくなります。  
+> > -g GEOMETRY, --geometry GEOMETRY:   
+> > ジオメトリの書き出し設定を"none", "tessellate", "unchanged"
+> > から指定できます。デフォルトではunchangedが指定されています。【警告】この設定をnoneにするとIFC Schemaに則った変換ではなくなる可能性があります。
+>
+> json2ifc
+> > -i, I: inputファイルのパスを指定します。  
+> > -o, O: outputファイルのパスを指定します。
+>
 
+実行が成功すると指定した場所にjsonファイルが格納され、処理時間が出力されます。
+
+```bash
+Conversion took  65.31001250000008  seconds
+```
 
 ## その他
 
