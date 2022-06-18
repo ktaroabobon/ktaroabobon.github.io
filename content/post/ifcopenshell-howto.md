@@ -1,7 +1,7 @@
 +++
 author = "ktaroabobon"
 title = "ifcJSONの使い方"
-date = "2022-06-16"
+date = "2022-06-18"
 description = "IFCファイルをjsonに変換するコンバータの一つであるifcJSONの使い方の解説"
 featured = true
 tags = [
