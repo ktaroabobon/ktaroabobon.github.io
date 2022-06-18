@@ -1,9 +1,9 @@
-[en]
-  title = "Clarity"
-  LanguageName = "English"
-  weight = 1
+#[en]
+#  title = "Clarity"
+#  LanguageName = "English"
+#  weight = 1
 
 [ja]
-  title = "abobonのサイト"
-  LanguageName = "日本語"
-  weight = 2
+title = "abobonのサイト"
+LanguageName = "日本語"
+weight = 2
