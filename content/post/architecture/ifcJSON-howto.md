@@ -145,7 +145,7 @@ services:
   ifcjson:
     container_name: ifcjson
     build:
-      context: .
+      context: ..
       dockerfile: ./Dockerfile
     ports:
       - "8000:8000"
