@@ -33,13 +33,13 @@ draft = true
 
 ![ifc bc first architecture](/static/images/ifc-bc-first.png)
 
-viewerにifc.jsを使用し、建築確認機能をAPI化させる。APIはAWS Lambdaを使用することを想定する。
+viewerにifc.jsを採用し、建築確認機能をAPI化させる。APIはAWS Lambdaを採用することを想定。（今後変更する可能性あり）
 
 しかし、ここで課題となるのは**viewerとAPIの間でIFCのデータをどのような形式で送受信させるか**ということである。
 
 そこでIFCをJSON形式に変換する方法などを視野に入れ、検討を行った。
 
-## IFCデータのやり取りの方法
+## IFCデータのやり取りの方法の検討
 
 前述した通り、IFCデータをviewerとAPIの間においてどのような形式でやりとりを行うのかという課題がある。今回はifc-spfデータ（以下、ifcspf）またはIFCをjsonに変換したデータ（以下、ifcjson）を対象とした。なお、jsonに変換する際は以前記事にした[ifcJSON](https://ktaroabobon.github.io/post/architecture/ifcjson-about/)を用いて行った。
 
@@ -143,6 +143,7 @@ ifcjson| 約65MB
 
 ### 考察
 
-#### 1. データベースを介した構成にするべき
+プロトタイプではIFCデータのサイズが大きいため、データを圧縮し解析処理に送信した。しかしこの方法は、解析処理に不必要であるIFCデータも送信してしまっているためデータサイズが大きくなっていると考えられる。つまり、機能ごとに必要最低限のデータを取り出すことが可能な仕組みを作ることによってこの課題は解決できると考えられる。  
+さらに現状のファイルベースのデータ管理では、データの作成や更新に適している形とは言えないため、IFCを基にしたデータベースを介した構成にする必要があるだろう。（下図）
 
-プロトタイプではIFCデータを圧縮し解析処理に送信した。しかしこの方法は、ifcのデータに依存するため
+![ifc bc second](/static/images/ifc-bc-second.png)
