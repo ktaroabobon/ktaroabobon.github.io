@@ -31,7 +31,7 @@ draft = false
 
 まず最初に考えた構成図は次図
 
-![ifc bc first architecture](/static/images/ifc-bc-first.png)
+![ifc bc first architecture](/post/research/ifc-bc-prototype/ifc-bc-first.png)
 
 viewerにifc.jsを採用し、建築確認機能をAPI化させる。APIはAWS Lambdaを採用することを想定。（今後変更する可能性あり）
 
@@ -72,7 +72,7 @@ ifcjson| 約65MB
 
 プロトタイプに関しては、ifc.jsはまだチュートリアルを終えた程度であったので代替としてjupyter notebookを使用した。プロトタイプの構成図としては次図である。
 
-![ifc bc prototype architecture](/static/images/ifc-bc-prototype.png)
+![ifc bc prototype architecture](/post/research/ifc-bc-prototype/ifc-bc-prototype.png)
 
 処理概要としては、まずifcspfをtextと読み込み圧縮バイナリ化した後、APIに送信を行う。この時、ifcデータの特定の部材のみなどではなく全てのデータを送信する。解析API側では受信したデータを解凍し解析を行い結果を返す。
 
@@ -146,4 +146,4 @@ ifcjson| 約65MB
 プロトタイプではIFCデータのサイズが大きいため、データを圧縮し解析処理に送信した。しかしこの方法は、解析処理に不必要であるIFCデータも送信してしまっているためデータサイズが大きくなっていると考えられる。つまり、機能ごとに必要最低限のデータを取り出すことが可能な仕組みを作ることによってこの課題は解決できると考えられる。  
 さらに現状のファイルベースのデータ管理では、データの作成や更新に適している形とは言えないため、IFCを基にしたデータベースを介した構成にする必要があるだろう。（下図）
 
-![ifc bc second](/static/images/ifc-bc-second.png)
+![ifc bc second](/post/research/ifc-bc-prototype/ifc-bc-second.png)
