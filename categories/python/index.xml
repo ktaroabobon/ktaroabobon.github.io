@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>python on abobonのサイト</title><link>https://ktaroabobon.github.io/categories/python/</link><description>Recent content in python on abobonのサイト</description><generator>Hugo -- gohugo.io</generator><language>ja</language><copyright>Copyright © 2008–2018, Steve Francia and the Hugo Authors; all rights reserved.</copyright><lastBuildDate>Thu, 30 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://ktaroabobon.github.io/categories/python/index.xml" rel="self" type="application/rss+xml"/><item><title>建築確認APIのプロトタイプの作成と考察</title><link>https://ktaroabobon.github.io/post/research/ifc-bc-prototype/</link><pubDate>Thu, 30 Jun 2022 00:00:00 +0000</pubDate><guid>https://ktaroabobon.github.io/post/research/ifc-bc-prototype/</guid><description>
 背景 以前、「IFCの属性情報を用いた建築確認自動化の可能性に関する研究」という題で論文を執筆した。 slide share IFC viewerの機能を中心としたフレームワークであるifc.jsを知り、建築確認機能を持つIFC viewerを作成できると考えた。 Webサービス 初期構成 まず最初に考えた構成図は次図
-Image not found a.warning-link { color: inherit !important; font-weight: inherit !important; text-decoration: underline !important; border-bottom: none !important; } Web path: https://ktaroabobon.github.io/static/images/ifc-bc-first.png
-Disk path: /static//static/images/ifc-bc-first.png
+Image not found a.warning-link { color: inherit !important; font-weight: inherit !important; text-decoration: underline !important; border-bottom: none !important; } Web path: https://ktaroabobon.github.io/post/research/ifc-bc-prototype/ifc-bc-first.png
+Disk path: /static//post/research/ifc-bc-prototype/ifc-bc-first.png
 Using Page Bundles: false
 viewerにifc.jsを採用し、建築確認機能をAPI化させる。APIはAWS Lambdaを採用することを想定。（今後変更する可能性あり）
 しかし、ここで課題となるのはviewerとAPIの間でIFCのデータをどのような形式で送受信させるかということである。
