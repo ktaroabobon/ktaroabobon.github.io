@@ -15,7 +15,7 @@ categories = [
 "研究"
 ]
 thumbnail = "images/building.png"
-draft = true
+draft = false
 
 +++
 
