@@ -1,8 +1,8 @@
 +++
 author = "ktaroabobon"
-title = "python-ifcopenshellのインストール方法"
-date = "2022-06-18"
-description = "ifcopenshellをpythonで触る際のインストール方法のメモ"
+title = "建築確認APIのプロトタイプの作成と考察"
+date = "2022-06-30"
+description = "建築確認APIのプロトタイプの作成と考察"
 featured = true
 tags = [
 "ifcopenshell",
@@ -11,10 +11,11 @@ tags = [
 categories = [
 "ifc",
 "ifcopenshell",
-"python"
+"python",
+"研究"
 ]
 thumbnail = "images/building.png"
-draft = false
+draft = true
 
 +++
 
