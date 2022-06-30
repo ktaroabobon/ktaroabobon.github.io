@@ -82,7 +82,7 @@
 <span><svg class="icon"><use xlink:href="#calendar"/></svg></span>
 <span class=post_date>
 Jun 30, 2022</span>
-<span class=post_time> · 読み終えるまでの時間：2分</span><span>&nbsp;· <a href=https://ktaroabobon.github.io/tags/ifcopenshell title=ifcopenshell class="post_tag button button_translucent">ifcopenshell
+<span class=post_time> · 読み終えるまでの時間：1分</span><span>&nbsp;· <a href=https://ktaroabobon.github.io/tags/ifcopenshell title=ifcopenshell class="post_tag button button_translucent">ifcopenshell
 </a><a href=https://ktaroabobon.github.io/tags/ifc.js title=ifc.js class="post_tag button button_translucent">ifc.js
 </a>
 </span>
@@ -113,13 +113,11 @@ share:
 <h2 id=初期構成>初期構成</h2>
 <p>まず最初に考えた構成図は次図</p>
 <p>
-<div class="notices warning image-warning">
-<div class=label>Image not found</div>
-<style>a.warning-link{color:inherit!important;font-weight:inherit!important;text-decoration:underline!important;border-bottom:none!important}</style>
-<p>Web path: <a href=https://ktaroabobon.github.io/post/research/ifc-bc-prototype/ifc-bc-first.png title=新規タブで開く target=_blank class=warning-link>https://ktaroabobon.github.io/post/research/ifc-bc-prototype/ifc-bc-first.png</a></p>
-<p>Disk path: /static//post/research/ifc-bc-prototype/ifc-bc-first.png</p>
-<p>Using <a href=https://gohugo.io/content-management/page-bundles/ title="Information about Hugo Page Bundles" target=_blank class=warning-link>Page Bundles</a>: false</p>
-</div>
+<figure>
+<picture>
+<img class="image_figure image_internal" src=https://ktaroabobon.github.io/images/ifc-bc-first.png alt="ifc bc first architecture" loading=lazy decoding=async width=1131 height=671>
+</picture>
+</figure>
 </p>
 <p>viewerにifc.jsを採用し、建築確認機能をAPI化させる。APIはAWS Lambdaを採用することを想定。（今後変更する可能性あり）</p>
 <p>しかし、ここで課題となるのは<strong>viewerとAPIの間でIFCのデータをどのような形式で送受信させるか</strong>ということである。</p>
@@ -182,13 +180,11 @@ share:
 <h3 id=概要>概要</h3>
 <p>プロトタイプに関しては、ifc.jsはまだチュートリアルを終えた程度であったので代替としてjupyter notebookを使用した。プロトタイプの構成図としては次図である。</p>
 <p>
-<div class="notices warning image-warning">
-<div class=label>Image not found</div>
-<style>a.warning-link{color:inherit!important;font-weight:inherit!important;text-decoration:underline!important;border-bottom:none!important}</style>
-<p>Web path: <a href=https://ktaroabobon.github.io/post/research/ifc-bc-prototype/ifc-bc-prototype.png title=新規タブで開く target=_blank class=warning-link>https://ktaroabobon.github.io/post/research/ifc-bc-prototype/ifc-bc-prototype.png</a></p>
-<p>Disk path: /static//post/research/ifc-bc-prototype/ifc-bc-prototype.png</p>
-<p>Using <a href=https://gohugo.io/content-management/page-bundles/ title="Information about Hugo Page Bundles" target=_blank class=warning-link>Page Bundles</a>: false</p>
-</div>
+<figure>
+<picture>
+<img class="image_figure image_internal" src=https://ktaroabobon.github.io/images/ifc-bc-prototype.png alt="ifc bc prototype architecture" loading=lazy decoding=async width=1121 height=671>
+</picture>
+</figure>
 </p>
 <p>処理概要としては、まずifcspfをtextと読み込み圧縮バイナリ化した後、APIに送信を行う。この時、ifcデータの特定の部材のみなどではなく全てのデータを送信する。解析API側では受信したデータを解凍し解析を行い結果を返す。</p>
 <h3 id=ifcデータの圧縮>IFCデータの圧縮</h3>
@@ -244,13 +240,11 @@ share:
 <p>プロトタイプではIFCデータのサイズが大きいため、データを圧縮し解析処理に送信した。しかしこの方法は、解析処理に不必要であるIFCデータも送信してしまっているためデータサイズが大きくなっていると考えられる。つまり、機能ごとに必要最低限のデータを取り出すことが可能な仕組みを作ることによってこの課題は解決できると考えられる。<br>
 さらに現状のファイルベースのデータ管理では、データの作成や更新に適している形とは言えないため、IFCを基にしたデータベースを介した構成にする必要があるだろう。（下図）</p>
 <p>
-<div class="notices warning image-warning">
-<div class=label>Image not found</div>
-<style>a.warning-link{color:inherit!important;font-weight:inherit!important;text-decoration:underline!important;border-bottom:none!important}</style>
-<p>Web path: <a href=https://ktaroabobon.github.io/post/research/ifc-bc-prototype/ifc-bc-second.png title=新規タブで開く target=_blank class=warning-link>https://ktaroabobon.github.io/post/research/ifc-bc-prototype/ifc-bc-second.png</a></p>
-<p>Disk path: /static//post/research/ifc-bc-prototype/ifc-bc-second.png</p>
-<p>Using <a href=https://gohugo.io/content-management/page-bundles/ title="Information about Hugo Page Bundles" target=_blank class=warning-link>Page Bundles</a>: false</p>
-</div>
+<figure>
+<picture>
+<img class="image_figure image_internal" src=https://ktaroabobon.github.io/images/ifc-bc-second.png alt="ifc bc second" loading=lazy decoding=async width=1141 height=610>
+</picture>
+</figure>
 </p>
 </div>
 <div class=post_comments>
